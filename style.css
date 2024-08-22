@@ -1,0 +1,260 @@
+/* font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal; */
+
+/* font-family: "IBM Plex Mono", monospace;
+        font-weight: 700;
+        font-style: normal; */
+
+/* font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal; */
+
+
+/* NORMALIZACION */
+* {
+    box-sizing: border-box;
+    /* esto mantiene el alto y ancho a pesar de padding y border */
+    color: rgba(189, 211, 204, 0.61);
+    font-family: 'IBM Plex Mono', 'monospace';
+    list-style: none;
+    /* quita decoradores de las listas */
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* quita decoradores de los textos de enlaces */
+}
+
+body {
+    background-color: black;
+    /* Borrar cuando este el fondo terminado */
+}
+
+header {
+    position: fixed;
+    /* header fijo en la pantalla */
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /* esto hace que el header quede por arriba */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    /* grosor del logo */
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    margin-left: 40px;
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid rgba(189, 211, 204, 0.61);;
+}
+
+#menu-icon {
+    display: none;
+}
+
+#menu-icon {
+    color: rgb(5, 95, 95);
+    font-size: 50px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none; /* nunca quiero que se vea el checkbox */
+}
+
+#menu-icon-action { /*para que no se le pueda clickear */
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, rgb(156, 204, 185) 0%, rgb(55, 110, 93) 25%, rgb(19, 97, 68) 50%, rgb(1, 15, 14) 100%);
+    position: relative; /* relativo al contenedor */
+    display: grid; /* para dividir el heor en dos columnas */
+    grid-template-columns: 1fr 1fr; /* las dos columnas */ 
+    align-items: center; /* alinea verticalmente el hero */
+    gap: 2rem; /* le da espacio de 2 rem entre las columnas del grid */
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
+    margin-bottom: 25px;
+    line-height: 1;
+}
+
+.hero-text h5 {
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-size: 120%;
+    margin-bottom: 15px;
+    line-height: 1.9;
+}
+
+
+
+.hero-text a {
+    font-family: 'IBM Plex Mono', 'monospace';
+    display: block;
+    width: 50%;
+    background-color: rgb(18, 39, 30);
+    border: 2px solid transparent;
+    border-radius: 3%;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .5s ease;
+    margin: 5px;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 3px solid black;
+    transform: translateX(10px);
+}
+
+.hero-img img {
+    width: 500px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 3s linear;
+}
+
+.hero-img img:hover {
+    width: 400px;
+    opacity: 0.6;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 15px;
+    font-size: 35px;
+    background-color: rgb(28, 61, 47);
+    border-radius: 10%;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translatey(10px);
+}
+
+/* Mediaqueries para hacer que la pagina sea responsive */
+@media (max-width:992px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text {
+        padding-top: 0;
+    }
+
+    .hero-img {
+        text-align: center;
+    }
+    .hero-img img {
+        width: 70%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p{
+        font-size: 70%;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+
+    .menu-icon-action {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-text a {
+        display: inline-table;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 260px;
+        background-color: rgba(0, 0, 0, 0.849);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .2s ease;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+
+}
