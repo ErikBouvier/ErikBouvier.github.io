@@ -117,6 +117,10 @@ section {
     margin-bottom: 25px;
 }
 
+.hero-text h5.vet {
+    font-size: 35px;
+}
+
 .hero-text p {
     font-family: "Edu VIC WA NT Beginner", cursive;
     font-size: 120%;
